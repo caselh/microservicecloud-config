@@ -1,11 +1,15 @@
-server: 
-  port: 3344 
-  
 spring:
-  application:
-    name:  microservicecloud-config
-  cloud:
-    config:
-      server:
-        git:
-          uri: git@github.com:caselh/microservicecloud-config.git #GitHub上面的git仓库名字
+    profiles:
+      active:
+        - dev
+---
+spring:
+    profiles: dev #开发环境
+    application:
+      name: microservicecloud-config-atguigu-dev
+---
+spring:
+    profiles: test #测试环境
+    application:
+        name: microservicecloud-config-auguigu-test
+        # 保存UTF-8格式
